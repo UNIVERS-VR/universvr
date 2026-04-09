@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7B2FBE"/>
+      <stop offset="100%" style="stop-color:#00D4FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <!-- Grid lines -->
+  <g stroke="rgba(0,212,255,0.07)" stroke-width="1">
+    <line x1="0" y1="80" x2="600" y2="80"/>
+    <line x1="0" y1="160" x2="600" y2="160"/>
+    <line x1="0" y1="240" x2="600" y2="240"/>
+    <line x1="0" y1="320" x2="600" y2="320"/>
+    <line x1="100" y1="0" x2="100" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="400"/>
+    <line x1="500" y1="0" x2="500" y2="400"/>
+  </g>
+  <!-- VR headset icon -->
+  <g transform="translate(300,170)" fill="none" stroke="url(#txt)" stroke-width="3" stroke-linecap="round">
+    <rect x="-60" y="-25" width="120" height="50" rx="14"/>
+    <circle cx="-22" cy="0" r="14"/>
+    <circle cx="22" cy="0" r="14"/>
+    <line x1="-60" y1="0" x2="-70" y2="0"/>
+    <line x1="60" y1="0" x2="70" y2="0"/>
+  </g>
+  <!-- Text -->
+  <text x="300" y="240" text-anchor="middle" font-family="'Orbitron', Arial, sans-serif" font-size="18" font-weight="700" fill="url(#txt)">UNIVERS VR</text>
+  <text x="300" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="rgba(136,136,160,0.8)">Réalité Virtuelle Tunisie</text>
+</svg>

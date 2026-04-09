@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://universvr.tn/sitemap.xml
+
+# Disallow admin or private paths (à personnaliser si nécessaire)
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl-delay recommandé
+Crawl-delay: 10
