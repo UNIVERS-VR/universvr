@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Univers VR – Réalité Virtuelle Tunisie | Animation Stand & Formation VR</title>
-  <meta name="description" content="Univers VR est une agence tunisienne spécialisée en réalité virtuelle : animation de stands pour foires et salons, et formations VR en sécurité industrielle, QHSE, premiers secours et team building." />
-  <meta name="keywords" content="réalité virtuelle Tunisie, VR Tunisie, animation stand VR, formation VR, sécurité industrielle VR, QHSE, Univers VR" />
+  <meta name="description" content="Univers VR est une agence tunisienne spécialisée en réalité virtuelle : animation de stands pour foires et salons (casques Meta Quest 2), et formations VR en sécurité industrielle, QHSE, premiers secours et team building." />
+  <meta name="keywords" content="réalité virtuelle Tunisie, VR Tunisie, animation stand VR, formation VR, sécurité industrielle VR, QHSE, Meta Quest, Univers VR, Tunis" />
   <meta name="author" content="Univers VR" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://universvr.tn/" />
@@ -13,7 +13,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Univers VR – Réalité Virtuelle Tunisie" />
-  <meta property="og:description" content="Animation de stands immersifs et formations VR professionnelles en Tunisie." />
+  <meta property="og:description" content="Animation de stands immersifs et formations VR professionnelles en Tunisie. Casques Meta Quest 2." />
   <meta property="og:image" content="https://universvr.tn/img/og-image.jpg" />
   <meta property="og:url" content="https://universvr.tn/" />
   <meta property="og:locale" content="fr_TN" />
@@ -31,17 +31,20 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Schema.org structured data -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Univers VR",
-    "description": "Agence de réalité virtuelle en Tunisie, spécialisée en animation de stands et formation VR.",
+    "description": "Agence de réalité virtuelle en Tunisie, spécialisée en animation de stands et formation VR avec casques Meta Quest 2.",
     "url": "https://universvr.tn",
-    "telephone": "+216-53-860-886",
+    "telephone": "+21699790665",
+    "email": "univers.vr@gmail.com",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "75 Avenue Khaireddine Pacha, Pacha Center",
+      "addressLocality": "Tunis",
       "addressCountry": "TN"
     },
     "sameAs": [
@@ -53,6 +56,10 @@
   </script>
 </head>
 <body>
+
+  <!-- Curseur personnalisé -->
+  <div class="custom-cursor" id="cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
   <!-- ===== NAVIGATION ===== -->
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
@@ -71,8 +78,9 @@
       <ul class="nav-menu" id="navMenu" role="list">
         <li><a href="#accueil" class="nav-link">Accueil</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
-        <li><a href="#realisations" class="nav-link">Réalisations</a></li>
         <li><a href="#formation" class="nav-link">Formation</a></li>
+        <li><a href="#realisations" class="nav-link">Réalisations</a></li>
+        <li><a href="#actualites" class="nav-link">Actualités</a></li>
         <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
       </ul>
     </div>
@@ -85,7 +93,7 @@
 
     <div class="hero-content">
       <div class="hero-badge fade-in" aria-hidden="true">
-        <span class="badge-dot"></span> Agence VR &bull; Tunisie
+        <span class="badge-dot"></span> Agence VR &bull; Tunis, Tunisie
       </div>
 
       <h1 class="hero-title fade-in delay-1">
@@ -94,35 +102,18 @@
       </h1>
 
       <p class="hero-subtitle fade-in delay-2">
-        Nous créons des expériences de réalité virtuelle immersives pour vos événements professionnels et vos formations industrielles en Tunisie.
+        Nous créons des expériences de réalité virtuelle immersives pour vos événements professionnels et vos formations industrielles en Tunisie — avec les casques <strong>Meta Quest 2</strong>.
       </p>
 
       <div class="hero-cta fade-in delay-3">
-        <a href="#services" class="btn btn-primary">
+        <a href="#services" class="btn btn-primary ripple">
           <span class="btn-icon" aria-hidden="true">🎯</span>
           Animation Stand
         </a>
-        <a href="#formation" class="btn btn-secondary">
+        <a href="#formation" class="btn btn-secondary ripple">
           <span class="btn-icon" aria-hidden="true">🎓</span>
           Formation VR
         </a>
-      </div>
-
-      <div class="hero-stats fade-in delay-4">
-        <div class="stat">
-          <span class="stat-number" data-target="50">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Événements</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat">
-          <span class="stat-number" data-target="1200">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Participants formés</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat">
-          <span class="stat-number" data-target="30">0</span><span class="stat-plus">+</span>
-          <span class="stat-label">Entreprises clientes</span>
-        </div>
       </div>
     </div>
 
@@ -132,64 +123,88 @@
     </div>
   </section>
 
+  <!-- ===== STATS ===== -->
+  <section class="stats-section" aria-label="Chiffres clés Univers VR">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <span class="stat-number" data-target="50">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Événements animés</span>
+        </div>
+        <div class="stat-item reveal delay-1">
+          <span class="stat-number" data-target="8">0</span>
+          <span class="stat-label">Casques simultanés</span>
+        </div>
+        <div class="stat-item reveal delay-2">
+          <span class="stat-number" data-target="4">0</span>
+          <span class="stat-label">Villes couvertes</span>
+        </div>
+        <div class="stat-item reveal delay-3">
+          <span class="stat-number" data-target="200">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Participants formés</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== SERVICES ÉVÉNEMENTIEL ===== -->
   <section class="section services" id="services" aria-labelledby="services-heading">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag">Événementiel</span>
         <h2 class="section-title" id="services-heading">Animation Stand & Événements</h2>
-        <p class="section-subtitle">Transformez votre présence en foires et salons avec des expériences VR qui captivent vos visiteurs et renforcent votre image de marque.</p>
+        <p class="section-subtitle">Transformez votre présence en foires et salons avec des expériences VR qui captivent vos visiteurs. Casques <strong>Meta Quest 2</strong> — jusqu'à <strong>8 personnes en simultané</strong>.</p>
       </div>
 
       <div class="services-grid">
 
         <article class="service-card reveal delay-1" aria-label="Animation stand foires et salons">
           <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
             </svg>
           </div>
           <h3>Animation de Stands</h3>
-          <p>Attirez et fidélisez les visiteurs grâce à des démonstrations VR spectaculaires lors de foires, salons professionnels et expositions. Un outil de communication différenciateur et mémorable.</p>
+          <p>Attirez et fidélisez les visiteurs lors de foires et salons professionnels. Nous intervenons dans tous les secteurs : médical, Hi-Tech, Green Tech, artistique, pharmaceutique.</p>
           <ul class="card-list" role="list">
-            <li>Casques VR dernière génération</li>
-            <li>Contenus personnalisés à votre marque</li>
-            <li>Équipe technique sur place</li>
-            <li>Rapport d'engagement visiteurs</li>
+            <li>Salons médicaux & pharmaceutiques</li>
+            <li>Salons Hi-Tech & Green Tech</li>
+            <li>Expositions artistiques & culturelles</li>
+            <li>Tout type de salon professionnel</li>
           </ul>
         </article>
 
-        <article class="service-card featured reveal delay-2" aria-label="Expérience immersive visiteurs">
-          <div class="card-badge" aria-label="Service phare">Populaire</div>
+        <article class="service-card featured reveal delay-2" aria-label="Casques Meta Quest 2 jusqu'à 8 personnes">
+          <div class="card-badge">Populaire</div>
           <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
               <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
             </svg>
           </div>
-          <h3>Expériences Immersives</h3>
-          <p>Créez des moments inoubliables pour vos visiteurs avec des simulations VR sur-mesure : visites virtuelles, showrooms 3D, démos produits interactives qui convertissent et impressionnent.</p>
+          <h3>Expérience Multi-Joueurs</h3>
+          <p>Jusqu'à <strong>8 casques Meta Quest 2 en simultané</strong> pour une expérience collective et immersive. Vos visiteurs vivent une aventure partagée inoubliable.</p>
           <ul class="card-list" role="list">
-            <li>Simulation produit & showroom 3D</li>
-            <li>Visite virtuelle d'installations</li>
-            <li>Jeux & expériences engageantes</li>
-            <li>Partage réseaux sociaux intégré</li>
+            <li>8 casques Meta Quest 2 simultanés</li>
+            <li>Expériences sur mesure selon votre thème</li>
+            <li>Équipe technique dédiée sur place</li>
+            <li>Installation et démontage inclus</li>
           </ul>
         </article>
 
-        <article class="service-card reveal delay-3" aria-label="Événements d'entreprise">
+        <article class="service-card reveal delay-3" aria-label="Expérience immersive sur mesure">
           <div class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
           </div>
-          <h3>Événements d'Entreprise</h3>
-          <p>De la conférence au lancement de produit, intégrez la VR dans vos événements corporate pour un impact maximal. Vos invités repartent avec une expérience unique en tête.</p>
+          <h3>Contenu Sur Mesure</h3>
+          <p>Chaque expérience VR est personnalisée selon le thème de votre salon et vos objectifs. Vos visiteurs repartent avec une impression forte et mémorable de votre marque.</p>
           <ul class="card-list" role="list">
-            <li>Lancement de produits en VR</li>
-            <li>Conférences & keynotes immersifs</li>
-            <li>Networking virtuel enrichi</li>
-            <li>Contenu événementiel archivé</li>
+            <li>Scénarios adaptés à votre secteur</li>
+            <li>Branding & identité visuelle intégrés</li>
+            <li>Expériences gamifiées & interactives</li>
+            <li>Rapport d'engagement visiteurs</li>
           </ul>
         </article>
 
@@ -203,7 +218,7 @@
       <div class="section-header reveal">
         <span class="section-tag">Formation Professionnelle</span>
         <h2 class="section-title" id="formation-heading">Formation VR Industrielle</h2>
-        <p class="section-subtitle">Formez vos équipes en toute sécurité grâce à des simulations réalistes en réalité virtuelle. Réduisez les risques, augmentez la rétention des connaissances.</p>
+        <p class="section-subtitle">Formez vos équipes en toute sécurité grâce à des simulations réalistes. Situations dangereuses reproduites en environnement virtuel — <strong>zéro risque réel</strong>.</p>
       </div>
 
       <div class="formation-layout">
@@ -214,7 +229,7 @@
           </div>
           <div class="formation-highlight">
             <span class="highlight-number">0</span>
-            <span class="highlight-text">risque lors des simulations d'accidents et d'urgences</span>
+            <span class="highlight-text">risque lors des simulations d'accidents et situations dangereuses</span>
           </div>
           <div class="formation-highlight">
             <span class="highlight-number">-40%</span>
@@ -224,35 +239,35 @@
 
         <div class="formation-cards">
 
-          <article class="formation-card reveal delay-1" aria-label="Formation sécurité industrielle VR">
+          <article class="formation-card reveal delay-1" aria-label="Formation QHSE et sécurité industrielle VR">
             <div class="fcard-icon" aria-hidden="true">⚙️</div>
             <div class="fcard-content">
-              <h3>Sécurité Industrielle</h3>
-              <p>Simulations d'accidents industriels, gestes et postures, manipulation d'équipements dangereux — sans aucun risque réel pour vos opérateurs.</p>
+              <h3>QHSE & Sécurité Industrielle</h3>
+              <p>Simulations immersives des normes Qualité, Hygiène, Sécurité et Environnement. Gestes et postures, manipulation d'équipements dangereux — sans aucun risque pour vos opérateurs.</p>
             </div>
           </article>
 
-          <article class="formation-card reveal delay-2" aria-label="Formation QHSE en VR">
-            <div class="fcard-icon" aria-hidden="true">🛡️</div>
-            <div class="fcard-content">
-              <h3>QHSE</h3>
-              <p>Qualité, Hygiène, Sécurité et Environnement : sensibilisez vos équipes avec des scénarios immersifs qui ancrent les bonnes pratiques en profondeur.</p>
-            </div>
-          </article>
-
-          <article class="formation-card reveal delay-3" aria-label="Formation premiers secours VR">
+          <article class="formation-card reveal delay-2" aria-label="Formation premiers secours VR">
             <div class="fcard-icon" aria-hidden="true">🚑</div>
             <div class="fcard-content">
               <h3>Premiers Secours</h3>
-              <p>Apprenez le RCP, l'usage du défibrillateur et les gestes d'urgence dans un environnement virtuel réaliste qui reproduit fidèlement les situations critiques.</p>
+              <p>RCP, défibrillateur, gestes d'urgence : apprenez dans un environnement virtuel qui reproduit fidèlement les situations critiques. Réactions et bons réflexes ancrés durablement.</p>
             </div>
           </article>
 
-          <article class="formation-card reveal delay-4" aria-label="Team building en réalité virtuelle">
+          <article class="formation-card reveal delay-3" aria-label="Team building en réalité virtuelle">
             <div class="fcard-icon" aria-hidden="true">🤝</div>
             <div class="fcard-content">
               <h3>Team Building VR</h3>
-              <p>Renforcez la cohésion de vos équipes avec des défis collaboratifs immersifs. Un outil de team building ludique, mémorable et efficace.</p>
+              <p>Renforcez la cohésion de vos équipes avec des défis collaboratifs immersifs. Ludique, mémorable et efficace — un team building hors du commun pour vos managers et collaborateurs.</p>
+            </div>
+          </article>
+
+          <article class="formation-card reveal delay-4" aria-label="Simulations de situations dangereuses en VR">
+            <div class="fcard-icon" aria-hidden="true">⚠️</div>
+            <div class="fcard-content">
+              <h3>Simulations de Danger</h3>
+              <p>Reproduisez des accidents industriels, incendies, fuites chimiques ou effondrements en environnement 100% sécurisé. Préparez vos équipes aux pires scénarios sans les exposer.</p>
             </div>
           </article>
 
@@ -267,32 +282,37 @@
       <div class="section-header reveal">
         <span class="section-tag">Portfolio</span>
         <h2 class="section-title" id="realisations-heading">Nos Réalisations</h2>
-        <p class="section-subtitle">Découvrez quelques-uns de nos projets VR réalisés pour des entreprises tunisiennes et régionales.</p>
+        <p class="section-subtitle">Des événements marquants et des formations impactantes réalisés en Tunisie pour des organisations reconnues.</p>
       </div>
 
-      <div class="portfolio-grid">
+      <div class="portfolio-grid portfolio-grid-4">
 
         <article class="portfolio-card reveal delay-1">
           <div class="portfolio-img-wrap">
             <img
-              src="img/realisation-salon-industrie.jpg"
-              alt="Animation stand VR au Salon de l'Industrie de Tunis avec visiteurs équipés de casques Meta Quest"
-              loading="lazy"
-              width="600"
-              height="400"
+              src="img/realisation-salon-patients.jpg"
+              alt="Animation stand VR au Salon des Patients 2026, Cité de la Culture, Tunis — expérience médicale immersive"
+              loading="lazy" width="600" height="400"
               onerror="this.src='img/placeholder.svg'"
             />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="overlay-tag">Événementiel</span>
+            <div class="portfolio-overlay">
+              <span class="overlay-tag">Médical</span>
+              <div class="overlay-see" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </div>
             </div>
           </div>
           <div class="portfolio-info">
-            <h3>Salon de l'Industrie – Tunis 2024</h3>
-            <p>Animation d'un stand immersif pour un groupe industriel avec simulation de chaîne de production en VR. 400+ visiteurs en 3 jours.</p>
-            <div class="portfolio-tags" aria-label="Tags du projet">
+            <div class="portfolio-meta">
+              <span class="meta-date">📅 4 avril 2026</span>
+              <span class="meta-place">📍 Cité de la Culture, Tunis</span>
+            </div>
+            <h3>Salon des Patients 2026</h3>
+            <p>Animation stand VR immersive lors du Salon des Patients, offrant aux visiteurs une expérience unique dans le domaine médical.</p>
+            <div class="portfolio-tags">
+              <span class="tag">Médical</span>
               <span class="tag">Stand VR</span>
-              <span class="tag">B2B</span>
-              <span class="tag">400 visiteurs</span>
+              <span class="tag">Tunis</span>
             </div>
           </div>
         </article>
@@ -300,24 +320,29 @@
         <article class="portfolio-card reveal delay-2">
           <div class="portfolio-img-wrap">
             <img
-              src="img/realisation-formation-chimique.jpg"
-              alt="Formation sécurité industrielle en VR pour opérateurs d'une usine chimique tunisienne"
-              loading="lazy"
-              width="600"
-              height="400"
+              src="img/realisation-sos-villages.jpg"
+              alt="Tournée nationale VR Villages des Enfants SOS Tunisie — Jendouba, Kasserine, Siliana, Kairouan"
+              loading="lazy" width="600" height="400"
               onerror="this.src='img/placeholder.svg'"
             />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="overlay-tag">Formation</span>
+            <div class="portfolio-overlay">
+              <span class="overlay-tag">Social</span>
+              <div class="overlay-see" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </div>
             </div>
           </div>
           <div class="portfolio-info">
-            <h3>Formation Sécurité – Groupe Chimique</h3>
-            <p>Programme de formation QHSE en VR pour 80 opérateurs d'un site industriel. Scénarios d'accidents chimiques simulés sans risque.</p>
-            <div class="portfolio-tags" aria-label="Tags du projet">
-              <span class="tag">QHSE</span>
-              <span class="tag">80 opérateurs</span>
-              <span class="tag">Industrie</span>
+            <div class="portfolio-meta">
+              <span class="meta-date">📅 Déc. 2025 (×4)</span>
+              <span class="meta-place">📍 Jendouba · Kasserine · Siliana · Kairouan</span>
+            </div>
+            <h3>Villages des Enfants SOS</h3>
+            <p>Tournée nationale de 4 villes avec animations VR pour les enfants de l'association SOS Villages d'Enfants Tunisie.</p>
+            <div class="portfolio-tags">
+              <span class="tag">Social</span>
+              <span class="tag">4 villes</span>
+              <span class="tag">Enfants</span>
             </div>
           </div>
         </article>
@@ -325,25 +350,181 @@
         <article class="portfolio-card reveal delay-3">
           <div class="portfolio-img-wrap">
             <img
-              src="img/realisation-team-building.jpg"
-              alt="Session de team building en réalité virtuelle pour une équipe de 30 managers d'une entreprise tunisienne"
-              loading="lazy"
-              width="600"
-              height="400"
+              src="img/realisation-crown-qhse.jpg"
+              alt="Formation QHSE en réalité virtuelle pour les équipes de l'usine Crown — sécurité industrielle"
+              loading="lazy" width="600" height="400"
               onerror="this.src='img/placeholder.svg'"
             />
-            <div class="portfolio-overlay" aria-hidden="true">
-              <span class="overlay-tag">Team Building</span>
+            <div class="portfolio-overlay">
+              <span class="overlay-tag">Formation</span>
+              <div class="overlay-see" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </div>
             </div>
           </div>
           <div class="portfolio-info">
-            <h3>Team Building VR – Entreprise Tech</h3>
-            <p>Journée cohésion d'équipe avec défis VR collaboratifs pour 30 managers. Expérience gamifiée sur-mesure avec classement en temps réel.</p>
-            <div class="portfolio-tags" aria-label="Tags du projet">
-              <span class="tag">Team Building</span>
-              <span class="tag">30 managers</span>
-              <span class="tag">Gamification</span>
+            <div class="portfolio-meta">
+              <span class="meta-date">📅 Octobre 2025</span>
+              <span class="meta-place">📍 Usine Crown, Tunisie</span>
             </div>
+            <h3>Formation QHSE — Crown</h3>
+            <p>Formation en réalité virtuelle sur les normes QHSE pour les équipes de l'usine Crown. Simulations immersives de situations de sécurité industrielle.</p>
+            <div class="portfolio-tags">
+              <span class="tag">QHSE</span>
+              <span class="tag">Industrie</span>
+              <span class="tag">Crown</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal delay-4">
+          <div class="portfolio-img-wrap">
+            <img
+              src="img/realisation-globalnet.jpg"
+              alt="Team building en réalité virtuelle pour les équipes Globalnet au Movenpick Hôtel Tunis"
+              loading="lazy" width="600" height="400"
+              onerror="this.src='img/placeholder.svg'"
+            />
+            <div class="portfolio-overlay">
+              <span class="overlay-tag">Team Building</span>
+              <div class="overlay-see" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-meta">
+              <span class="meta-date">📅 Février 2026</span>
+              <span class="meta-place">📍 Movenpick Hôtel, Tunis</span>
+            </div>
+            <h3>Team Building Globalnet</h3>
+            <p>Session de team building innovante en réalité virtuelle pour les équipes Globalnet, alliant cohésion d'équipe et technologie immersive.</p>
+            <div class="portfolio-tags">
+              <span class="tag">Team Building</span>
+              <span class="tag">Globalnet</span>
+              <span class="tag">Tunis</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ACTUALITÉS ===== -->
+  <section class="section actualites" id="actualites" aria-labelledby="actualites-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Agenda</span>
+        <h2 class="section-title" id="actualites-heading">Actualités & Événements</h2>
+        <p class="section-subtitle">Restez informés de nos dernières animations et événements à venir.</p>
+      </div>
+
+      <div class="actu-tabs reveal" role="tablist" aria-label="Filtrer les actualités">
+        <button class="actu-tab active" data-filter="avenir" role="tab" aria-selected="true" aria-controls="actu-grid" id="tab-avenir">
+          <span class="tab-dot tab-dot-green" aria-hidden="true"></span>
+          Événements à venir
+        </button>
+        <button class="actu-tab" data-filter="passe" role="tab" aria-selected="false" aria-controls="actu-grid" id="tab-passe">
+          <span class="tab-dot tab-dot-violet" aria-hidden="true"></span>
+          Actualités passées
+        </button>
+      </div>
+
+      <div class="actu-grid" id="actu-grid" role="tabpanel">
+
+        <!-- À VENIR -->
+        <article class="actu-card actu-avenir reveal delay-1" data-category="avenir">
+          <div class="actu-img-wrap">
+            <img src="img/actu-hitech.svg" alt="Salon Hi-Tech 2026 — animation stand VR Univers VR" loading="lazy" width="400" height="240" onerror="this.src='img/placeholder.svg'" />
+            <span class="actu-badge badge-avenir">À VENIR</span>
+          </div>
+          <div class="actu-info">
+            <div class="actu-meta">
+              <span>📅 Juin 2026</span>
+            </div>
+            <h3>Salon Hi-Tech 2026</h3>
+            <p>Restez connectés pour découvrir notre prochaine animation lors du grand salon technologique. Une expérience VR innovante vous attend.</p>
+            <a href="#contact" class="btn-actu ripple">En savoir plus</a>
+          </div>
+        </article>
+
+        <article class="actu-card actu-avenir reveal delay-2" data-category="avenir">
+          <div class="actu-img-wrap">
+            <img src="img/actu-qhse-2026.svg" alt="Formation QHSE Q2 2026 en réalité virtuelle" loading="lazy" width="400" height="240" onerror="this.src='img/placeholder.svg'" />
+            <span class="actu-badge badge-avenir">À VENIR</span>
+          </div>
+          <div class="actu-info">
+            <div class="actu-meta">
+              <span>📅 Mai 2026</span>
+            </div>
+            <h3>Formation QHSE Q2 2026</h3>
+            <p>Nouvelle session de formation sécurité industrielle en réalité virtuelle. Places limitées — contactez-nous pour réserver votre session.</p>
+            <a href="#contact" class="btn-actu ripple">En savoir plus</a>
+          </div>
+        </article>
+
+        <article class="actu-card actu-avenir reveal delay-3" data-category="avenir">
+          <div class="actu-img-wrap">
+            <img src="img/actu-teambuilding-2026.svg" alt="Team Building VR été 2026 pour entreprises tunisiennes" loading="lazy" width="400" height="240" onerror="this.src='img/placeholder.svg'" />
+            <span class="actu-badge badge-avenir">À VENIR</span>
+          </div>
+          <div class="actu-info">
+            <div class="actu-meta">
+              <span>📅 Juillet 2026</span>
+            </div>
+            <h3>Team Building Été 2026</h3>
+            <p>Session team building VR pour entreprises — réservez votre place dès maintenant pour un été inoubliable avec vos équipes.</p>
+            <a href="#contact" class="btn-actu ripple">En savoir plus</a>
+          </div>
+        </article>
+
+        <!-- PASSÉS -->
+        <article class="actu-card actu-passe reveal delay-1" data-category="passe" style="display:none">
+          <div class="actu-img-wrap">
+            <img src="img/realisation-globalnet.jpg" alt="Team Building Globalnet VR Movenpick Tunis février 2026" loading="lazy" width="400" height="240" onerror="this.src='img/placeholder.svg'" />
+            <span class="actu-badge badge-passe">PASSÉ</span>
+          </div>
+          <div class="actu-info">
+            <div class="actu-meta">
+              <span>📅 Février 2026</span>
+              <span>📍 Movenpick Hôtel, Tunis</span>
+            </div>
+            <h3>Team Building Globalnet</h3>
+            <p>Session de team building innovante en réalité virtuelle pour les équipes Globalnet, alliant cohésion et technologie immersive.</p>
+            <a href="#realisations" class="btn-actu ripple">Voir la réalisation</a>
+          </div>
+        </article>
+
+        <article class="actu-card actu-passe reveal delay-2" data-category="passe" style="display:none">
+          <div class="actu-img-wrap">
+            <img src="img/realisation-salon-patients.jpg" alt="Salon des Patients 2026 Cité de la Culture Tunis" loading="lazy" width="400" height="240" onerror="this.src='img/placeholder.svg'" />
+            <span class="actu-badge badge-passe">PASSÉ</span>
+          </div>
+          <div class="actu-info">
+            <div class="actu-meta">
+              <span>📅 4 avril 2026</span>
+              <span>📍 Cité de la Culture, Tunis</span>
+            </div>
+            <h3>Salon des Patients 2026</h3>
+            <p>Animation stand VR immersive lors du Salon des Patients, offrant aux visiteurs une expérience unique dans le domaine médical.</p>
+            <a href="#realisations" class="btn-actu ripple">Voir la réalisation</a>
+          </div>
+        </article>
+
+        <article class="actu-card actu-passe reveal delay-3" data-category="passe" style="display:none">
+          <div class="actu-img-wrap">
+            <img src="img/realisation-crown-qhse.jpg" alt="Formation QHSE Crown usine Tunisie octobre 2025" loading="lazy" width="400" height="240" onerror="this.src='img/placeholder.svg'" />
+            <span class="actu-badge badge-passe">PASSÉ</span>
+          </div>
+          <div class="actu-info">
+            <div class="actu-meta">
+              <span>📅 Octobre 2025</span>
+              <span>📍 Usine Crown, Tunisie</span>
+            </div>
+            <h3>Formation QHSE — Crown</h3>
+            <p>Formation VR sur les normes QHSE pour les équipes de l'usine Crown. Simulations immersives de sécurité industrielle.</p>
+            <a href="#realisations" class="btn-actu ripple">Voir la réalisation</a>
           </div>
         </article>
 
@@ -365,12 +546,12 @@
           <div class="stars" aria-label="Note : 5 étoiles sur 5" role="img">
             <span aria-hidden="true">★★★★★</span>
           </div>
-          <p id="temoignage-1">"Univers VR a transformé notre stand au SIDCO en véritable attraction. Les visiteurs faisaient la queue pour essayer nos simulations VR. Notre image de marque a été boostée de manière spectaculaire. Une équipe professionnelle et réactive !"</p>
+          <p id="temoignage-1">"Univers VR a transformé notre stand en véritable attraction. Les visiteurs faisaient la queue pour essayer les casques Meta Quest. Notre image de marque a été boostée de manière spectaculaire. Une équipe professionnelle et réactive !"</p>
           <footer class="temoignage-author">
             <div class="author-avatar" aria-hidden="true">MA</div>
             <div class="author-info">
               <cite class="author-name">Mohamed Aziz B.</cite>
-              <span class="author-role">Directeur Marketing, Groupe Industriel Sfax</span>
+              <span class="author-role">Directeur Marketing, Groupe Industriel</span>
             </div>
           </footer>
         </blockquote>
@@ -379,12 +560,12 @@
           <div class="stars" aria-label="Note : 5 étoiles sur 5" role="img">
             <span aria-hidden="true">★★★★★</span>
           </div>
-          <p id="temoignage-2">"La formation premiers secours en VR a eu un impact réel sur notre équipe. Les gestes ont été assimilés beaucoup plus vite que lors de nos formations habituelles. Les simulations réalistes ont créé une vraie prise de conscience chez nos opérateurs."</p>
+          <p id="temoignage-2">"La formation QHSE en VR a eu un impact réel sur nos équipes. Les gestes ont été assimilés bien plus vite que lors de nos formations habituelles. Les simulations réalistes ont créé une vraie prise de conscience chez nos opérateurs."</p>
           <footer class="temoignage-author">
             <div class="author-avatar" aria-hidden="true">SB</div>
             <div class="author-info">
               <cite class="author-name">Sonia Ben Amor</cite>
-              <span class="author-role">Responsable QHSE, Usine Agroalimentaire</span>
+              <span class="author-role">Responsable QHSE, Industrie</span>
             </div>
           </footer>
         </blockquote>
@@ -399,7 +580,7 @@
       <div class="section-header reveal">
         <span class="section-tag">Parlons-en</span>
         <h2 class="section-title" id="contact-heading">Contactez-nous</h2>
-        <p class="section-subtitle">Un projet événementiel ou une formation VR en vue ? Décrivez-nous votre besoin et nous vous répondons sous 24h.</p>
+        <p class="section-subtitle">Un projet événementiel ou une formation VR en vue ? Nous vous répondons sous 24h.</p>
       </div>
 
       <div class="contact-layout">
@@ -407,24 +588,28 @@
           <div class="contact-item">
             <div class="contact-icon" aria-hidden="true">📍</div>
             <div>
-              <h3>Localisation</h3>
-              <p>Tunis, Tunisie<br />(Interventions nationale & régionale)</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon" aria-hidden="true">📧</div>
-            <div>
-              <h3>Email</h3>
-              <p><a href="mailto:univers.VR@gmail.com">univers.VR@gmail.com</a></p>
+              <h3>Adresse</h3>
+              <p>75 Avenue Khaireddine Pacha<br />Pacha Center, Tunis</p>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon" aria-hidden="true">📱</div>
             <div>
               <h3>Téléphone / WhatsApp</h3>
-              <p><a href="tel:+21653860886">+216 53 860 886</a></p>
+              <p><a href="tel:+21699790665">+216 99 790 665</a></p>
             </div>
           </div>
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">📧</div>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:univers.vr@gmail.com">univers.vr@gmail.com</a></p>
+            </div>
+          </div>
+          <a href="https://wa.me/21699790665" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp ripple" aria-label="Contacter Univers VR sur WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Écrire sur WhatsApp
+          </a>
         </div>
 
         <form
@@ -438,40 +623,18 @@
           <div class="form-row">
             <div class="form-group">
               <label for="nom">Nom complet <span aria-hidden="true">*</span></label>
-              <input
-                type="text"
-                id="nom"
-                name="nom"
-                placeholder="Votre nom"
-                required
-                autocomplete="name"
-                aria-required="true"
-              />
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="name" aria-required="true" />
             </div>
             <div class="form-group">
               <label for="email">Email <span aria-hidden="true">*</span></label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="votre@email.com"
-                required
-                autocomplete="email"
-                aria-required="true"
-              />
+              <input type="email" id="email" name="email" placeholder="votre@email.com" required autocomplete="email" aria-required="true" />
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="telephone">Téléphone</label>
-              <input
-                type="tel"
-                id="telephone"
-                name="telephone"
-                placeholder="+216 XX XXX XXX"
-                autocomplete="tel"
-              />
+              <input type="tel" id="telephone" name="telephone" placeholder="+216 XX XXX XXX" autocomplete="tel" />
             </div>
             <div class="form-group">
               <label for="service">Type de service <span aria-hidden="true">*</span></label>
@@ -479,8 +642,7 @@
                 <option value="" disabled selected>Choisir un service</option>
                 <option value="animation-stand">Animation Stand / Foire</option>
                 <option value="experience-immersive">Expérience Immersive</option>
-                <option value="formation-securite">Formation Sécurité Industrielle</option>
-                <option value="formation-qhse">Formation QHSE</option>
+                <option value="formation-qhse">Formation QHSE / Sécurité</option>
                 <option value="formation-premiers-secours">Formation Premiers Secours</option>
                 <option value="team-building">Team Building VR</option>
                 <option value="autre">Autre</option>
@@ -490,21 +652,13 @@
 
           <div class="form-group">
             <label for="message">Votre message <span aria-hidden="true">*</span></label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Décrivez votre projet, votre secteur d'activité, la date souhaitée..."
-              required
-              aria-required="true"
-            ></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet, votre secteur d'activité, la date souhaitée..." required aria-required="true"></textarea>
           </div>
 
-          <!-- Honeypot anti-spam -->
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <input type="hidden" name="_subject" value="Nouveau contact – Univers VR" />
 
-          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+          <button type="submit" class="btn btn-primary btn-full ripple" id="submitBtn">
             <span class="btn-icon" aria-hidden="true">🚀</span>
             Envoyer ma demande
           </button>
@@ -524,7 +678,13 @@
             <span class="logo-icon" aria-hidden="true">◈</span>
             <span class="logo-text">Univers <span class="logo-accent">VR</span></span>
           </a>
-          <p>L'agence de réalité virtuelle de référence en Tunisie. Événements immersifs, formations VR sur-mesure.</p>
+          <p>L'agence de réalité virtuelle de référence en Tunisie. Événements immersifs & formations VR sur mesure avec casques Meta Quest 2.</p>
+          <address class="footer-address">
+            75 Avenue Khaireddine Pacha, Pacha Center<br />
+            Tunis, Tunisie<br />
+            <a href="tel:+21699790665">+216 99 790 665</a> &bull;
+            <a href="mailto:univers.vr@gmail.com">univers.vr@gmail.com</a>
+          </address>
         </div>
 
         <nav class="footer-nav" aria-label="Navigation footer">
@@ -534,6 +694,7 @@
             <li><a href="#services">Services Événementiel</a></li>
             <li><a href="#formation">Formation VR</a></li>
             <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#actualites">Actualités</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -547,10 +708,10 @@
             <a href="https://www.linkedin.com/company/univers-vr" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Univers VR sur LinkedIn" role="listitem">
               <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
-            <a href="https://www.instagram.com/universvr" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Univers VR sur Instagram" role="listitem">
+            <a href="https://www.instagram.com/univers.vr" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Univers VR sur Instagram" role="listitem">
               <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             </a>
-            <a href="https://wa.me/21653860886" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Contacter Univers VR sur WhatsApp" role="listitem">
+            <a href="https://wa.me/21699790665" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Contacter Univers VR sur WhatsApp" role="listitem">
               <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
           </div>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f20"/>
+      <stop offset="100%" style="stop-color:#0f1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00D4FF"/>
+      <stop offset="100%" style="stop-color:#7B2FBE"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <g stroke="rgba(0,212,255,0.06)" stroke-width="1">
+    <line x1="0" y1="60" x2="400" y2="60"/><line x1="0" y1="120" x2="400" y2="120"/>
+    <line x1="0" y1="180" x2="400" y2="180"/>
+    <line x1="80" y1="0" x2="80" y2="240"/><line x1="160" y1="0" x2="160" y2="240"/>
+    <line x1="240" y1="0" x2="240" y2="240"/><line x1="320" y1="0" x2="320" y2="240"/>
+  </g>
+  <!-- Chip/circuit icon -->
+  <g transform="translate(200,100)" fill="none" stroke="url(#accent)" stroke-width="2" stroke-linecap="round">
+    <rect x="-25" y="-25" width="50" height="50" rx="6"/>
+    <rect x="-14" y="-14" width="28" height="28" rx="3"/>
+    <line x1="-25" y1="-14" x2="-35" y2="-14"/>
+    <line x1="-25" y1="0" x2="-35" y2="0"/>
+    <line x1="-25" y1="14" x2="-35" y2="14"/>
+    <line x1="25" y1="-14" x2="35" y2="-14"/>
+    <line x1="25" y1="0" x2="35" y2="0"/>
+    <line x1="25" y1="14" x2="35" y2="14"/>
+    <line x1="-14" y1="-25" x2="-14" y2="-35"/>
+    <line x1="0" y1="-25" x2="0" y2="-35"/>
+    <line x1="14" y1="-25" x2="14" y2="-35"/>
+    <line x1="-14" y1="25" x2="-14" y2="35"/>
+    <line x1="0" y1="25" x2="0" y2="35"/>
+    <line x1="14" y1="25" x2="14" y2="35"/>
+  </g>
+  <text x="200" y="165" text-anchor="middle" font-family="'Orbitron',Arial,sans-serif" font-size="12" font-weight="700" fill="url(#accent)">SALON HI-TECH 2026</text>
+  <text x="200" y="182" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="rgba(136,136,160,0.8)">Juin 2026 · À VENIR</text>
+</svg>

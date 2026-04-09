@@ -1,23 +1,18 @@
 /* ============================================================
-   UNIVERS VR – JavaScript principal
+   UNIVERS VR – JavaScript v2
    ============================================================ */
-
 'use strict';
 
-/* ---- Navbar scroll effect ---- */
+/* ---- Navbar scroll ---- */
 (function initNavbar() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
-
-  const onScroll = () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  };
-
+  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 40);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
 
-/* ---- Active nav link on scroll ---- */
+/* ---- Active nav link ---- */
 (function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
@@ -32,7 +27,7 @@
         });
       }
     });
-  }, { threshold: 0.3, rootMargin: '-60px 0px -60px 0px' });
+  }, { threshold: 0.25, rootMargin: '-60px 0px -60px 0px' });
 
   sections.forEach(s => observer.observe(s));
 })();
@@ -57,23 +52,14 @@
     toggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
   });
 
-  // Close on nav link click
-  menu.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', close);
-  });
-
-  // Close on outside click
-  document.addEventListener('click', (e) => {
+  menu.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', close));
+  document.addEventListener('click', e => {
     if (!toggle.contains(e.target) && !menu.contains(e.target)) close();
   });
-
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') close();
-  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 })();
 
-/* ---- Scroll reveal animations ---- */
+/* ---- Scroll reveal ---- */
 (function initReveal() {
   const elements = document.querySelectorAll('.reveal');
   if (!elements.length) return;
@@ -85,12 +71,12 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   elements.forEach(el => observer.observe(el));
 })();
 
-/* ---- Animated counter for hero stats ---- */
+/* ---- Animated counters ---- */
 (function initCounters() {
   const counters = document.querySelectorAll('.stat-number[data-target]');
   if (!counters.length) return;
@@ -98,17 +84,15 @@
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 
   const animateCounter = (el) => {
-    const target = parseInt(el.getAttribute('data-target'), 10);
-    const duration = 1800;
-    const start = performance.now();
+    const target   = parseInt(el.getAttribute('data-target'), 10);
+    const duration = 1600;
+    const start    = performance.now();
 
     const step = (now) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
+      const progress = Math.min((now - start) / duration, 1);
       el.textContent = Math.round(easeOut(progress) * target).toLocaleString('fr-FR');
       if (progress < 1) requestAnimationFrame(step);
     };
-
     requestAnimationFrame(step);
   };
 
@@ -124,12 +108,23 @@
   counters.forEach(el => observer.observe(el));
 })();
 
-/* ---- Particle canvas (hero background) ---- */
+/* ---- Ripple effect ---- */
+(function initRipple() {
+  document.querySelectorAll('.ripple').forEach(el => {
+    el.addEventListener('click', function(e) {
+      this.classList.remove('ripple-active');
+      void this.offsetWidth; // reflow
+      this.classList.add('ripple-active');
+      const remove = () => this.classList.remove('ripple-active');
+      this.addEventListener('animationend', remove, { once: true });
+    });
+  });
+})();
+
+/* ---- Particle canvas ---- */
 (function initParticles() {
   const canvas = document.getElementById('particleCanvas');
   if (!canvas) return;
-
-  // Respect prefers-reduced-motion
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     canvas.style.display = 'none';
     return;
@@ -139,24 +134,23 @@
   let W, H, particles, animId;
 
   const COLORS = ['rgba(123,47,190,', 'rgba(0,212,255,', 'rgba(155,79,222,'];
-  const COUNT  = window.innerWidth < 600 ? 50 : 110;
+  const COUNT  = window.innerWidth < 600 ? 45 : 100;
+
+  const rand = (min, max) => Math.random() * (max - min) + min;
 
   const resize = () => {
     W = canvas.width  = canvas.offsetWidth;
     H = canvas.height = canvas.offsetHeight;
   };
 
-  const rand = (min, max) => Math.random() * (max - min) + min;
-
   const createParticle = () => ({
-    x:    rand(0, W),
-    y:    rand(0, H),
-    r:    rand(0.8, 2.5),
-    dx:   rand(-0.25, 0.25),
-    dy:   rand(-0.35, -0.05),
-    o:    rand(0.15, 0.7),
-    c:    COLORS[Math.floor(Math.random() * COLORS.length)],
-    life: rand(0.4, 1),
+    x:  rand(0, W), y: rand(0, H),
+    r:  rand(0.8, 2.4),
+    dx: rand(-0.25, 0.25),
+    dy: rand(-0.35, -0.05),
+    o:  rand(0.15, 0.7),
+    c:  COLORS[Math.floor(Math.random() * COLORS.length)],
+    life: rand(0.5, 1),
   });
 
   const init = () => {
@@ -168,8 +162,8 @@
     ctx.clearRect(0, 0, W, H);
 
     particles.forEach((p, i) => {
-      p.x += p.dx;
-      p.y += p.dy;
+      p.x  += p.dx;
+      p.y  += p.dy;
       p.life -= 0.003;
 
       if (p.life <= 0 || p.y < -10) {
@@ -184,7 +178,6 @@
       ctx.fill();
     });
 
-    // Draw faint connections between nearby particles
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -194,8 +187,7 @@
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          const alpha = ((90 - dist) / 90 * 0.12).toFixed(3);
-          ctx.strokeStyle = `rgba(0,212,255,${alpha})`;
+          ctx.strokeStyle = `rgba(0,212,255,${((90 - dist) / 90 * 0.1).toFixed(3)})`;
           ctx.lineWidth = 0.5;
           ctx.stroke();
         }
@@ -205,37 +197,121 @@
     animId = requestAnimationFrame(draw);
   };
 
-  const onResize = () => {
-    cancelAnimationFrame(animId);
-    init();
-    draw();
-  };
-
   init();
   draw();
 
-  window.addEventListener('resize', onResize, { passive: true });
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(animId);
+    init();
+    draw();
+  }, { passive: true });
 })();
 
-/* ---- Contact form handling ---- */
+/* ---- Hero parallax (léger) ---- */
+(function initParallax() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  const grid = document.querySelector('.hero-grid');
+  if (!grid) return;
+
+  window.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth  - 0.5) * 18;
+    const y = (e.clientY / window.innerHeight - 0.5) * 18;
+    grid.style.transform = `translate(${x}px, ${y}px)`;
+  }, { passive: true });
+})();
+
+/* ---- Curseur personnalisé ---- */
+(function initCustomCursor() {
+  const cursor    = document.getElementById('cursor');
+  const cursorDot = document.getElementById('cursorDot');
+  if (!cursor || !cursorDot) return;
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  let mouseX = 0, mouseY = 0;
+  let curX = 0, curY = 0;
+  let dotX = 0, dotY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dotX   = e.clientX;
+    dotY   = e.clientY;
+    cursorDot.style.left = dotX + 'px';
+    cursorDot.style.top  = dotY + 'px';
+  }, { passive: true });
+
+  const smoothCursor = () => {
+    curX += (mouseX - curX) * 0.12;
+    curY += (mouseY - curY) * 0.12;
+    cursor.style.left = curX + 'px';
+    cursor.style.top  = curY + 'px';
+    requestAnimationFrame(smoothCursor);
+  };
+  smoothCursor();
+
+  const hoverEls = document.querySelectorAll('a, button, .portfolio-card, .actu-card, .service-card, .formation-card, select, input, textarea');
+  hoverEls.forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+  });
+})();
+
+/* ---- Onglets Actualités ---- */
+(function initActuTabs() {
+  const tabs  = document.querySelectorAll('.actu-tab');
+  const cards = document.querySelectorAll('.actu-card');
+  if (!tabs.length || !cards.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const filter = tab.getAttribute('data-filter');
+
+      // Update tabs
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      // Filter cards
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (cat === filter) {
+          card.classList.remove('hide');
+          card.style.display = '';
+          // Trigger show animation
+          requestAnimationFrame(() => card.classList.add('show'));
+          card.addEventListener('animationend', () => card.classList.remove('show'), { once: true });
+        } else {
+          card.classList.add('hide');
+          card.addEventListener('animationend', () => {
+            card.style.display = 'none';
+            card.classList.remove('hide');
+          }, { once: true });
+        }
+      });
+    });
+  });
+})();
+
+/* ---- Contact form ---- */
 (function initContactForm() {
-  const form    = document.getElementById('contactForm');
-  const notice  = document.getElementById('formNotice');
-  const submit  = document.getElementById('submitBtn');
+  const form   = document.getElementById('contactForm');
+  const notice = document.getElementById('formNotice');
+  const submit = document.getElementById('submitBtn');
   if (!form || !notice || !submit) return;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Basic client-side validation
     const required = form.querySelectorAll('[required]');
     let valid = true;
     required.forEach(field => {
       field.style.borderColor = '';
-      if (!field.value.trim()) {
-        field.style.borderColor = '#ff6b6b';
-        valid = false;
-      }
+      if (!field.value.trim()) { field.style.borderColor = '#ff6b6b'; valid = false; }
     });
     if (!valid) {
       notice.textContent = 'Veuillez remplir tous les champs obligatoires.';
@@ -243,7 +319,6 @@
       return;
     }
 
-    // Email validation
     const email = form.querySelector('#email');
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
       email.style.borderColor = '#ff6b6b';
@@ -258,21 +333,20 @@
     notice.className = 'form-notice';
 
     try {
-      const data = new FormData(form);
       const response = await fetch(form.action, {
         method: 'POST',
-        body: data,
+        body: new FormData(form),
         headers: { 'Accept': 'application/json' },
       });
 
       if (response.ok) {
-        notice.textContent = 'Votre message a bien été envoyé ! Nous vous répondons sous 24h.';
+        notice.textContent = 'Message envoyé ! Nous vous répondons sous 24h.';
         notice.className = 'form-notice';
         form.reset();
         submit.textContent = 'Message envoyé ✓';
         submit.style.background = 'linear-gradient(135deg, #1a6b3a, #2d9e58)';
       } else {
-        throw new Error('Server error');
+        throw new Error();
       }
     } catch {
       notice.textContent = 'Une erreur est survenue. Contactez-nous directement par email.';
@@ -283,19 +357,16 @@
   });
 })();
 
-/* ---- Smooth scroll for all anchor links ---- */
+/* ---- Smooth scroll ---- */
 (function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
       const id = link.getAttribute('href').slice(1);
       const target = document.getElementById(id);
       if (!target) return;
-
       e.preventDefault();
       const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'), 10) || 72;
-      const top = target.getBoundingClientRect().top + window.scrollY - navH;
-
-      window.scrollTo({ top, behavior: 'smooth' });
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navH, behavior: 'smooth' });
     });
   });
 })();

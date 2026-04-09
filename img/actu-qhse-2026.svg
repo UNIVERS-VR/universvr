@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a0a"/>
+      <stop offset="100%" style="stop-color:#1a0a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B00"/>
+      <stop offset="100%" style="stop-color:#7B2FBE"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <g stroke="rgba(255,107,0,0.06)" stroke-width="1">
+    <line x1="0" y1="60" x2="400" y2="60"/><line x1="0" y1="120" x2="400" y2="120"/>
+    <line x1="0" y1="180" x2="400" y2="180"/>
+    <line x1="80" y1="0" x2="80" y2="240"/><line x1="160" y1="0" x2="160" y2="240"/>
+    <line x1="240" y1="0" x2="240" y2="240"/><line x1="320" y1="0" x2="320" y2="240"/>
+  </g>
+  <g transform="translate(200,95)" fill="none" stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round">
+    <path d="M-18,-28 L0,-34 L18,-28 L18,0 Q18,16 0,22 Q-18,16 -18,0 Z"/>
+    <path d="M-8,-5 L-3,0 L10,-10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="200" y="165" text-anchor="middle" font-family="'Orbitron',Arial,sans-serif" font-size="12" font-weight="700" fill="url(#accent)">FORMATION QHSE Q2 2026</text>
+  <text x="200" y="182" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="rgba(136,136,160,0.8)">Mai 2026 · Sécurité Industrielle VR</text>
+</svg>
