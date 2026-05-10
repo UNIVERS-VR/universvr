@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://universvr.tn/sitemap.xml
+Sitemap: https://vr-experience.store/sitemap.xml
 
 # Disallow admin or private paths (à personnaliser si nécessaire)
 Disallow: /admin/
