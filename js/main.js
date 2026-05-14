@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    UNIVERS VR – JavaScript v2
    ============================================================ */
 'use strict';
@@ -345,6 +345,7 @@
         form.reset();
         submit.textContent = 'Message envoyé ✓';
         submit.style.background = 'linear-gradient(135deg, #1a6b3a, #2d9e58)';
+        if (typeof fbq === 'function') { fbq('track', 'Lead'); }
       } else {
         throw new Error();
       }
